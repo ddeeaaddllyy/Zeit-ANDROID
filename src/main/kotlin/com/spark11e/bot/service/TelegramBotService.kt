@@ -24,7 +24,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKe
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException
 
 private val botScope = CoroutineScope(Dispatchers.IO)
-
+// main Telegram bot thread
 @Component
 open class TelegramBotService(
     private val botProperty: BotProperty,
