@@ -24,7 +24,6 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKe
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException
 
 private val botScope = CoroutineScope(Dispatchers.IO)
-// main Telegram bot thread
 @Component
 open class TelegramBotService(
     private val botProperty: BotProperty,
@@ -40,6 +39,9 @@ open class TelegramBotService(
         )
     }
 
+    /** Standard child class setup
+        to launch a Telegram bot
+     */
     private final val log = LoggerFactory.getLogger(TelegramBotService::class.java)
 
     override fun getBotToken() = botProperty.token

@@ -1,10 +1,10 @@
 package com.spark11e.bot.telegram
 
 /**
-* Enum class для обеспечения более понятной
-* логики работы телеграмм бота и обработки каждой
-* возможной команды
-*/
+ * Enum class Bot command for providing clearer
+ * logic for the Telegram bot's operation and processing of each
+ * possible command
+ */
 
 enum class BotCommands(
     val command: String,
