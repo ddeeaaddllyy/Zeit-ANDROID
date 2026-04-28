@@ -1,3 +1,0 @@
-Добавить обработчик всех ошибок получаемых из HoyoverseService
-Http errors
-database response error
