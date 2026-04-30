@@ -25,7 +25,7 @@ struct Chat {
 
 #[tokio::main(flavor = "current_thread")]
 async fn main() {
-    let token = "8579022330:AAEK8t2B4WquvZo2oEDhZJloVjoY-b6a0W4";
+    let token = "-";
     let client = reqwest::Client::new();
 
     let mut offset = 0;
