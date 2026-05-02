@@ -1,0 +1,3 @@
+pub fn log(msg: &str) {
+    println!("[DEBUG] {}", msg);
+}

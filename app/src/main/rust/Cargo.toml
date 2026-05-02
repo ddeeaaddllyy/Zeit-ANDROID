@@ -4,10 +4,12 @@ version = "0.1.0-unrelease"
 edition = "2021"
 
 [dependencies]
-tokio = { version = "1", features = ["rt", "macros"] }
+tokio = { version = "1", features = ["rt", "macros", "rt-multi-thread"] }
 reqwest = { version = "0.11", default-features = false, features = ["json", "rustls-tls"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1.0.149"
+serenity = { version = "0.12", default-features = false, features = ["client", "gateway", "model", "rustls_backend"] }
+dotenv = "0.15"
 
 [build-dependencies]
 cc = "1"
@@ -17,4 +19,3 @@ opt-level = "z"
 lto = true
 codegen-units = 1
 strip = true
-panic = "abort"
