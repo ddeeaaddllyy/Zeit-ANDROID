@@ -1,2 +1,2 @@
-pub mod discord;
-pub(crate) mod telegram;
+pub(crate) mod telegram_client;
+pub(crate) mod discord_client;

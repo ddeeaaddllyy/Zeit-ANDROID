@@ -1,6 +1,7 @@
 use std::io::{self, Write};
 use crate::core::config::settings::Settings;
-use crate::core::infrastructure::{discord, telegram};
+use crate::core::infrastructure::discord_client::discord;
+use crate::core::infrastructure::telegram_client::telegram;
 use crate::core::utils::debug::log;
 
 pub async fn run() {
