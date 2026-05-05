@@ -22,7 +22,7 @@ pub async fn start(token: String) {
             continue;
         }
 
-        let text = resp.unwrap().text().await.unwrap();
+        let text: String = resp.unwrap().text().await.unwrap();
 
         let parsed: Result<Response<Update>, _> = serde_json::from_str(&text);
 
@@ -31,22 +31,22 @@ pub async fn start(token: String) {
             continue;
         }
 
-        let data = parsed.unwrap();
+        let data: Response<Update> = parsed.unwrap();
 
         if !data.ok {
             log("Telegram API error");
             continue;
         }
 
-        let updates = data.result.unwrap_or_default();
+        let updates: Vec<Update> = data.result.unwrap_or_default();
 
         for update in updates {
             offset = update.update_id + 1;
 
             if let Some(msg) = update.message {
                 if let Some(text) = msg.text {
-                    let command = Command::from_text(&text);
-                    let answer = handler::handle_command(command);
+                    let command: Command = Command::from_text(&text);
+                    let answer: String = handler::handle_command(command);
 
                     send_message(&client, &token, msg.chat.id, &answer).await;
                 }
@@ -56,7 +56,7 @@ pub async fn start(token: String) {
 }
 
 async fn send_message(client: &reqwest::Client, token: &str, chat_id: i64, text: &str) {
-    let url = format!("https://api.telegram.org/bot{}/sendMessage", token);
+    let url: String = format!("https://api.telegram.org/bot{}/sendMessage", token);
 
     let _ = client
         .post(&url)

@@ -7,7 +7,7 @@ use crate::core::utils::debug::log;
 pub async fn run() {
     dotenv::dotenv().ok();
 
-    let settings = Settings::new();
+    let settings: Settings = Settings::new();
 
     println!("1 - Telegram");
     println!("2 - Discord");
@@ -15,7 +15,8 @@ pub async fn run() {
     print!("Choose: ");
     io::stdout().flush().unwrap();
 
-    let mut input = String::new();
+    let mut input: String = String::new();
+    println!("{}", input);
     io::stdin().read_line(&mut input).unwrap();
 
     match input.trim() {

@@ -7,9 +7,9 @@ struct Handler;
 impl EventHandler for Handler {}
 
 pub async fn start(token: String) {
-    let intents = GatewayIntents::GUILD_MESSAGES | GatewayIntents::MESSAGE_CONTENT;
+    let intents: GatewayIntents = GatewayIntents::GUILD_MESSAGES | GatewayIntents::MESSAGE_CONTENT;
 
-    let mut client = Client::builder(token, intents)
+    let mut client: Client = Client::builder(token, intents)
         .event_handler(Handler)
         .await
         .expect("Discord client error");
