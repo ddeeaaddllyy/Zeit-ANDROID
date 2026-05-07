@@ -1,3 +1,1 @@
-pub fn log(msg: &str) {
-    println!("[DEBUG] {}", msg);
-}
+pub fn log(msg: &str) -> () { println!("[DEBUG] {}", msg) }
